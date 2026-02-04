@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Login</title></head>
+<body>
+  <h1>Вход</h1>
+  {% if form.errors %}<p>Неверный логин или пароль.</p>{% endif %}
+  {# csrf_token — защита от подделки запросов; обязателен для POST-форм в Django #}
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Войти</button>
+    {# next — URL, на который перенаправить после успешного входа (передаётся с запроса) #}
+    <input type="hidden" name="next" value="{{ next }}">
+  </form>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head><title>Главная</title></head>
+<body>
+  {# user доступен во всех шаблонах благодаря context_processors в settings.py #}
+  {% if user.is_authenticated %}
+    <p>Вы вошли как {{ user.username }}. <a href="{% url 'logout' %}">Выйти</a></p>
+  {% else %}
+    <p><a href="{% url 'login' %}">Войти</a></p>
+  {% endif %}
+</body>
+</html>
