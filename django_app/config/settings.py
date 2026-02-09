@@ -19,6 +19,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'zere.shop']
 
 # Подключённые приложения Django. auth — пользователи и авторизация, admin — админ-панель и т.д.
 INSTALLED_APPS = [
+    'sample',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

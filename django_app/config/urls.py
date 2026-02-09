@@ -13,4 +13,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Авторизация: /accounts/login/, /accounts/logout/ и др. (встроенное приложение auth).
     path('accounts/', include('django.contrib.auth.urls')),
+    path('sample/', include('sample.urls')),
 ]
